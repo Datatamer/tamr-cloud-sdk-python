@@ -1,4 +1,4 @@
-from tamr_sdk.api_client import TamrApiClient
+from tamr_cloud_sdk.tamr_sdk import TamrApiClient
 import time
 
 start = time.time()

@@ -1,8 +1,8 @@
 import grpc
 
-from tamr.api.v1beta1.jobs_pb2_grpc import JobsStub
+from tamr_cloud_sdk.tamr.api.v1beta1.jobs_pb2_grpc import JobsStub
 from tamr.api.v1beta1 import jobs_pb2 as jobs
-from tamr_sdk.utils.handler import exception_handler
+from tamr_cloud_sdk.tamr_sdk.utils.handler import exception_handler
 
 class JobsClient:
     def __init__(self, host, metadata, grpc_stack_trace=False):

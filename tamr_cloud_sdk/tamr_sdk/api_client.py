@@ -1,4 +1,4 @@
-from tamr_sdk.jobs.jobs_client import JobsClient
+from tamr_cloud_sdk.tamr_sdk.jobs.jobs_client import JobsClient
 
 class TamrApiClient:
     def __init__(self, host, metadata, grpc_stack_trace=False):
