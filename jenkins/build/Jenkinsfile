@@ -88,15 +88,14 @@ podTemplate(
             sh "./cicd/scripts/lint-commits.sh"
           }
         }
-      }
 
-      stage('Release') {
+        stage('Release') {
           if (currentBuild.result == null || currentBuild.result == 'SUCCESS') {
             container("semantic-release-poetry") {
               withCredentials([string(credentialsId: 'github-oauth', variable: 'GH_TOKEN')]) {
                 withEnv(["GH_TOKEN=${GH_TOKEN}"]) {
                   sh "semantic-release --dry-run"
-              }
+                }
               if (helper.getBranchName() == 'main' && !helper.isPRBuild()) {
                 withEnv(["GH_TOKEN=${GH_TOKEN}"]) {
                       sh "poetry config repositories.artifact-registry"
@@ -109,4 +108,5 @@ podTemplate(
       }
     }
   }
-}
+  }
+  }
